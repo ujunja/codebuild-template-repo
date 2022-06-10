@@ -6,9 +6,6 @@ phases:
       - npm install
   build:
     commands:
-      - npm run test
-      - rm -rf ./__tests__
-      - npm prune --production
       - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template-file template-export.yml
       - aws cloudformation deploy --template-file template-export.yml --s3-bucket $S3_BUCKET --stack-name $STACKNAME --capabilities CAPABILITY_IAM --region $REGION --parameter-overrides Env=$ENV
 artifacts:
