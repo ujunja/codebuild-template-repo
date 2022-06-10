@@ -2,10 +2,11 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "sam-app"
+stack_name = "codebuild-sam-test"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-so8munneuu02"
-s3_prefix = "sam-app"
+s3_prefix = "codebuild-sam-test"
 region = "ap-northeast-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 image_repositories = []
+parameter_overrides = "Env=\"dev\""

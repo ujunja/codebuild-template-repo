@@ -39,14 +39,7 @@ Resources:
           Properties:
             Path: /hello
             Method: get
-  CodeBuildProject:
-    Type: AWS::CodeBuild::Project
-    Properties:
-      Environment:
-        ComputeType: BUILD_GENERAL1_SMALL
-        Image: public.ecr.aws/sam/build-nodejs16.x
-        Type: LINUX_CONTAINER
-
+            
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
