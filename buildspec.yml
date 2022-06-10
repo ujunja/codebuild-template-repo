@@ -4,12 +4,15 @@ phases:
   pre_build:
     commands:
       - npm install
-      - docker container ls -a
       - sam --version
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 972565036278.dkr.ecr.ap-northeast-1.amazonaws.com
+
   build:
     commands:
       # - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template-file template-export.yml
       # - aws cloudformation deploy --template-file template-export.yml --s3-bucket $S3_BUCKET --stack-name $STACKNAME --capabilities CAPABILITY_IAM --region $REGION --parameter-overrides Env=$ENV
+      - docker container ls -a
       - sam build
       - sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
 artifacts:
