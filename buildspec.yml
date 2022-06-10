@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - npm install
-      - sudo docker images
+      - docker container ls -a
       - sam --version
   build:
     commands:
