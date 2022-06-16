@@ -26,7 +26,7 @@ exports.lambdaHandler = async (event, context) => {
         }
     } catch (err) {
         console.log(err);
-        console.log('check2');
+        console.log('check3');
         return err;
     }
 
