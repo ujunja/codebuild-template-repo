@@ -16,4 +16,4 @@ phases:
 artifacts:
   type: zip
   files:
-    - packaged.yaml
+    - BuildArtif/packaged.yaml
