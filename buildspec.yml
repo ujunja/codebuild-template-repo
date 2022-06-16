@@ -13,7 +13,4 @@ phases:
       # - aws cloudformation deploy --template-file template-export.yml --s3-bucket $S3_BUCKET --stack-name $STACKNAME --capabilities CAPABILITY_IAM --region $REGION --parameter-overrides Env=$ENV
       - sam build
       - sam package --s3-bucket lswn-java-sam-test --output-template-file packaged.yaml
-artifacts:
-  discard-paths: true
-  files:
-    - packaged.yml
+      - sam deploy --template-file packaged.yaml
