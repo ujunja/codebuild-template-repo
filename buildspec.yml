@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - npm install
+      # - npm install
   build:
     commands:
       # - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template-file template-export.yml
