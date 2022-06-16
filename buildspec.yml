@@ -5,6 +5,9 @@ phases:
     commands:
       - npm install
       - sam --version
+      - aws iam list-users
+      - aws configure list
+      - aws configure list --profile default
   build:
     commands:
       # - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template-file template-export.yml
