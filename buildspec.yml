@@ -14,6 +14,4 @@ artifacts:
   type: zip
   files:
     - packaged.yaml
-  base-directory: 'BuildArtif'
-  discard-paths: yes
   
