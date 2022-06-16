@@ -16,6 +16,4 @@ phases:
 artifacts:
   discard-paths: true
   files:
-    - template-export.yml
-    - README.md
-
+    - packaged.yml
