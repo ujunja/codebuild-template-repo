@@ -3,13 +3,13 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      # - npm install
+      - npm install
   build:
     commands:
       # - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template-file template-export.yml
       # - aws cloudformation deploy --template-file template-export.yml --s3-bucket $S3_BUCKET --stack-name $STACKNAME --capabilities CAPABILITY_IAM --region $REGION --parameter-overrides Env=$ENV
       - sam build
-      - sam package --s3-bucket lswn-java-sam-test --s3-prefix sam-test-codepipelin/package --output-template-file packaged.yaml
+      - sam package --s3-bucket lswn-java-sam-test --output-template-file packaged.yaml
       # - sam deploy  --no-confirm-changeset --no-fail-on-empty-changeset
 artifacts:
   discard-paths: true
