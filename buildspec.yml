@@ -10,9 +10,9 @@ phases:
       # - aws cloudformation deploy --template-file template-export.yml --s3-bucket $S3_BUCKET --stack-name $STACKNAME --capabilities CAPABILITY_IAM --region $REGION --parameter-overrides Env=$ENV
       - sam build
       - sam package --s3-bucket lswn-java-sam-test --s3-prefix BuildArtif --output-template-file packaged.yaml
-      - sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --template-file packaged.yaml
+      - sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --template-file packaged-deploy.yaml
 artifacts:
   type: zip
   files:
-    - packaged.yaml
+    - packaged-deploy.yaml
   
