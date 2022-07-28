@@ -9,7 +9,7 @@
     "axios": "^0.21.1"
   },
   "scripts": {
-    "test": "mocha tests/unit/"
+    "test": "mocha hello-world/tests/unit/"
   },
   "devDependencies": {
     "chai": "^4.2.0",
