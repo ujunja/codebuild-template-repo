@@ -32,6 +32,9 @@ Resources:
       Runtime: nodejs14.x
       Architectures:
         - x86_64
+      Environment:
+        Variables:
+          SERVERURL: $SERVERURL
       Policies:
         - AWSLambdaBasicExecutionRole # LambdaからCloudWatchにログを転送するポリシー
         - AWSLambdaVPCAccessExecutionRole # LambdaからVPCにあるADサーバーアクセスするポリシー
@@ -45,4 +48,3 @@ Resources:
           Properties:
             Path: /hello
             Method: get
-
