@@ -35,13 +35,6 @@ Resources:
       Environment:
         Variables:
           SERVERURL: $SERVERURL
-      Policies:
-        - AWSLambdaBasicExecutionRole # LambdaからCloudWatchにログを転送するポリシー
-        - AWSLambdaVPCAccessExecutionRole # LambdaからVPCにあるADサーバーアクセスするポリシー
-        - AWSXrayWriteOnlyAccess # LambdaからXrayにアクセスするポリシー
-        - AmazonSSMReadOnlyAccess # LambdaからSSMのパラメータストアのデータを取得するポリシー 
-        - AWSSecretsManagerGetSecretValuePolicy:
-          SecretArn: 'arn:aws:secretsmanager:####'
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
