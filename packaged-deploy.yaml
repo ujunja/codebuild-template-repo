@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Hello-Sample-Lambda
+
+  Sample SAM Template for Hello-Sample-Lambda
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Parameters:
+  Env:
+    Type: String
+    AllowedValues:
+    - prd
+    - stg
+    - dev
+    Default: dev
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName:
+        Fn::Join:
+        - ''
+        - - hello-world
+          - '-'
+          - Ref: Env
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Environment:
+        Variables:
+          SERVERURL: $SERVERURL
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+      CodeUri: s3://lswn-csv-upload-bucket/BuildArtif/7d7c913075b25e9bb16776a1ad4283a7
+    Metadata:
+      SamResourceId: HelloWorldFunction
