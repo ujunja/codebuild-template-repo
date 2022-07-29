@@ -4,6 +4,7 @@ phases:
   pre_build:
     commands:
       # - npm install
+      - echo $BRANCH
   build:
     commands:
       # - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template-file template-export.yml
