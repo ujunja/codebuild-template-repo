@@ -2,9 +2,9 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "codebuild-sam-test"
-s3_bucket = "codebuild-buildspec-repo"
-s3_prefix = "codebuild-sam-test"
+stack_name = "pipeline-sam-lswn"
+s3_bucket = "lswn-java-sam-test"
+s3_prefix = "sam-test-codepipelin/BuildArti"
 region = "ap-northeast-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
